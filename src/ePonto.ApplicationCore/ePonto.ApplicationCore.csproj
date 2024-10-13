@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>ePonto</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\pkg\System.Extensions\System.Extensions.csproj" />
+    <ProjectReference Include="..\ePonto.ApplicationModel\ePonto.ApplicationModel.csproj" />
+    <ProjectReference Include="..\ePonto.DomainModel\ePonto.DomainModel.csproj" />
+    <ProjectReference Include="..\ePonto.Shared\ePonto.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-ePonto.Web-063d43b7-72ca-4905-bde5-0567a0efe994</UserSecretsId>
+    <RootNamespace>ePonto</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.10" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.10" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.Identity.Web" Version="2.19.1" />
+    <PackageReference Include="Microsoft.Identity.Web.UI" Version="2.19.1" />
+    <PackageReference Include="Microsoft.Identity.Web.DownstreamApi" Version="2.15.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\pkg\System.Extensions\System.Extensions.csproj" />
+    <ProjectReference Include="..\ePonto.ApplicationCore\ePonto.ApplicationCore.csproj" />
+    <ProjectReference Include="..\ePonto.ApplicationModel\ePonto.ApplicationModel.csproj" />
+    <ProjectReference Include="..\ePonto.EntityFrameworkCore.SqlServer\ePonto.EntityFrameworkCore.SqlServer.csproj" />
+  </ItemGroup>
+
+</Project>
