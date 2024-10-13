@@ -1,0 +1,51 @@
+﻿@model MarcacaoPontoViewModel
+@{
+    ViewData["Title"] = "Marcar Ponto";
+}
+
+<form method="post" action="Marcar">
+    <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page">
+                        <i class="bi bi-check2-circle"></i>
+                        Marcar Ponto
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row mb-3">
+                <label asp-for="Ponto.DataHora" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-9">
+                    <input asp-for="Ponto.DataHora" class="form-control" readonly />
+                    <span asp-validation-for="Ponto.DataHora" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="Ponto.Observacao" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-9">
+                    <textarea asp-for="Ponto.Observacao" class="form-control"></textarea>
+                    <span asp-validation-for="Ponto.Observacao" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            @Html.AntiForgeryToken()
+            <button type="submit" value="Marcar" class="btn btn-primary">
+                Marcar
+            </button>
+        </div>
+    </div>
+</form>
+
+
+
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
