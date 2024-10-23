@@ -4,7 +4,7 @@ namespace System.ComponentModel;
 
 public abstract class LocalTableEntity
 {
-    public int? Id { get; set; }
+    public long? Id { get; set; }
 
     public DateTime? CreationDate { get; set; }
 

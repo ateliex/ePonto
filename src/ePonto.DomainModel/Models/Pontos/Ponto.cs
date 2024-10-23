@@ -6,26 +6,27 @@ using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ePonto.Models.Contratos;
 
 namespace ePonto.Models.Pontos;
 
 public class Ponto : LocalTableEntity
 {
-    //[Required(ErrorMessage = "'Contrato' deve ser informado.")]
-    //[DisplayName("Contrato")]
-    //public Guid? ContratoId { get; set; }
+    [Required(ErrorMessage = "'Contrato' deve ser informado.")]
+    [DisplayName("Contrato")]
+    public long? ContratoId { get; set; }
 
-    //[DisplayName("Contrato")]
-    //public Contrato? Contrato { get; set; }
+    [DisplayName("Contrato")]
+    public Contrato? Contrato { get; set; }
 
     [Required]
     [DisplayName("Data/Hora")]
     [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:mm}")]
     public DateTime? DataHora { get; set; }
 
-    //[Required]
-    //[DisplayName("Momento")]
-    //public MomentoEnum? MomentoId { get; set; }
+    [Required]
+    [DisplayName("Momento")]
+    public MomentoEnum? MomentoId { get; set; }
 
     //[DisplayName("Pausa")]
     //public PausaEnum? PausaId { get; set; }

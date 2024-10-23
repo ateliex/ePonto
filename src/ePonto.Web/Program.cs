@@ -1,5 +1,8 @@
-using ePonto.Features.ConsultaPontos;
-using ePonto.Features.MarcacaoPontos;
+using ePonto.Data;
+using ePonto.Features.BuscaContratos;
+using ePonto.Features.GestaoContratos;
+using ePonto.Features.RegistroPontos;
+using ePonto.Models.Pontos;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authorization;
@@ -29,8 +32,12 @@ public class Program
         builder.Services.AddRazorPages()
             .AddMicrosoftIdentityUI();
 
-        builder.Services.AddTransient<ConsultaPontosInterface, ConsultaPontosService>();
-        builder.Services.AddTransient<MarcacaoPontoInterface, MarcacaoPontosService>();
+        builder.Services.AddTransient<ConsultaPontosInterface, PontosDbService>();
+        builder.Services.AddTransient<DetalhamentoPontosInterface, PontosDbService>();
+        builder.Services.AddTransient<RegistroPontosInterface, RegistroPontosService>();
+        builder.Services.AddTransient<MarcacaoPontosInterface, MarcacaoPontosService>();
+        builder.Services.AddTransient<ConsultaContratosInterface, ContratosDbService>();
+        builder.Services.AddTransient<BuscaContratosInterface, ContratosDbService>();
 
         var app = builder.Build();
 

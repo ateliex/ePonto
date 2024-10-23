@@ -16,13 +16,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Drivers\" />
     <Folder Include="Support\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\pkg\System.Extensions\System.Extensions.csproj" />
-    <ProjectReference Include="..\ePonto.Specs.Web\ePonto.Specs.Web.csproj" />
+    <ProjectReference Include="..\ePonto.Specs.Core\ePonto.Specs.Core.csproj" />
+    <ProjectReference Include="..\ePonto.Specs.Shared\ePonto.Specs.Shared.csproj" />
   </ItemGroup>
 
 </Project>

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ePonto.Models.Pontos;
+namespace ePonto.Features.GestaoFolhas;
 
-public interface PontosRepositoryInterface
+public interface ConsultaFolhasInterface
 {
-    Task<Ponto[]> ObtemPontos();
+
 }

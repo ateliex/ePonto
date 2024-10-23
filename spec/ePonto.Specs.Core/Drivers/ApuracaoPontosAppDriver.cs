@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ePonto.Models.Pontos;
+namespace ePonto.Drivers;
 
-public interface PontosRepositoryInterface
+public class ApuracaoPontosAppDriver : IApuracaoPontosDriver
 {
-    Task<Ponto[]> ObtemPontos();
+
 }

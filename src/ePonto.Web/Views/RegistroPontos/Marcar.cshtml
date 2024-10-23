@@ -1,9 +1,11 @@
-﻿@model MarcacaoPontoViewModel
+﻿@using ePonto.Models.RegistroPontos
+
+@model MarcarViewModel
 @{
     ViewData["Title"] = "Marcar Ponto";
 }
 
-<form method="post" action="Marcar">
+<form method="post">
     <div class="card">
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
@@ -18,10 +20,10 @@
         <div class="card-body">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="row mb-3">
-                <label asp-for="Ponto.DataHora" class="col-sm-3 col-form-label"></label>
+                <label asp-for="DataHora" class="col-sm-3 col-form-label"></label>
                 <div class="col-sm-9">
-                    <input asp-for="Ponto.DataHora" class="form-control" readonly />
-                    <span asp-validation-for="Ponto.DataHora" class="text-danger"></span>
+                    <input asp-for="DataHora" class="form-control" readonly />
+                    <span asp-validation-for="DataHora" class="text-danger"></span>
                 </div>
             </div>
             <div class="row mb-3">
@@ -33,7 +35,6 @@
             </div>
         </div>
         <div class="card-footer">
-            @Html.AntiForgeryToken()
             <button type="submit" value="Marcar" class="btn btn-primary">
                 Marcar
             </button>
@@ -46,6 +47,6 @@
 
 @section Scripts {
     @{
-    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }

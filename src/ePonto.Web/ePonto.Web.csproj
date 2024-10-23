@@ -20,6 +20,7 @@
     <ProjectReference Include="..\..\pkg\System.Extensions\System.Extensions.csproj" />
     <ProjectReference Include="..\ePonto.ApplicationCore\ePonto.ApplicationCore.csproj" />
     <ProjectReference Include="..\ePonto.ApplicationModel\ePonto.ApplicationModel.csproj" />
+    <ProjectReference Include="..\ePonto.DomainModel\ePonto.DomainModel.csproj" />
     <ProjectReference Include="..\ePonto.EntityFrameworkCore.SqlServer\ePonto.EntityFrameworkCore.SqlServer.csproj" />
   </ItemGroup>
 

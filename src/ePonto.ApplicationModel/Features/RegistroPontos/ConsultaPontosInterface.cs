@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ePonto.Features.ConsultaPontos;
+namespace ePonto.Features.RegistroPontos;
 
 public interface ConsultaPontosInterface
 {
-    Task<ConsultaPontosResponse> ConsultaPontos(ConsultaPontosRequest request);
+    Task<ConsultaPontosResponse> ConsultarPontos(ConsultaPontosRequest request);
 }
 
 public class ConsultaPontosRequest
@@ -25,10 +25,7 @@ public class ConsultaPontosResponse
 
 public class Ponto
 {
-    [DisplayName("Data/Hora")]
-    [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:mm}")]
     public DateTime DataHora { get; set; }
 
-    [DisplayName("Observação")]
     public string? Observacao { get; set; }
 }

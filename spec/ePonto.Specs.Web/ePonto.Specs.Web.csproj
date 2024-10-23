@@ -10,6 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\pkg\System.Extensions\System.Extensions.csproj" />
     <ProjectReference Include="..\..\src\ePonto.Web\ePonto.Web.csproj" />
+    <ProjectReference Include="..\ePonto.Specs.Shared\ePonto.Specs.Shared.csproj" />
   </ItemGroup>
 
 </Project>

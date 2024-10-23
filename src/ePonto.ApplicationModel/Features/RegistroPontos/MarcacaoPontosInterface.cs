@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ePonto.Features.MarcacaoPontos;
+namespace ePonto.Features.RegistroPontos;
 
-public interface MarcacaoPontoInterface
+public interface MarcacaoPontosInterface
 {
-    Task<MarcacaoPontoResponse> MarcaPonto(MarcacaoPontoRequest request);
+    Task<MarcacaoPontoResponse> MarcarPonto(MarcacaoPontoRequest request);
 }
 
 public class MarcacaoPontoRequest

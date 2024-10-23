@@ -1,4 +1,6 @@
-﻿@model PontosViewModel
+﻿@using ePonto.Models.RegistroPontos
+
+@model IndexViewModel
 
 @{
     ViewData["Title"] = "Registro de Pontos";
@@ -6,18 +8,18 @@
 
 <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
     <div class="btn-group me-2" role="group" aria-label="First group">
-        <a class="btn btn-primary Criacao Ponto" asp-action="MarcacaoPonto" target="_modal">
+        <a class="btn btn-primary Criacao Ponto" asp-action="Registrar" target="_modal">
             <i class="bi bi-check2-circle"></i>
-            Marcar Ponto
+            Registrar Ponto
         </a>
         @* <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
         <span class="visually-hidden">Toggle Dropdown</span>
         </button>
         <ul class="dropdown-menu">
         <li>
-        <a class="dropdown-item Marcacao Ponto" asp-action="Marcar" target="_modal">
+        <a class="dropdown-item Marcacao Ponto" asp-action="Registrar" target="_modal">
         <i class="bi bi-check2-circle"></i>
-        Marcar Ponto
+        Registrar Ponto
         </a>
         </li>
         </ul> *@
@@ -90,8 +92,8 @@
         </thead>
         <tbody class="table-group-divider">
             @foreach (var item in Model.Pontos)
-        {
-            <tr>
+            {
+                <tr>
                     <td class="p-1" scope="row">
                         <div class="btn-group" role="group">
                             @* <a class="btn btn-link rounded-0" asp-action="./Detalhar" asp-route-id="@item.Id" title="Detalhar">
@@ -127,7 +129,7 @@
                         @Html.DisplayFor(modelItem => item.Observacao)
                     </td>
                 </tr>
-        }
+            }
         </tbody>
     </table>
     @* <partial name="_Pagination" model="Model.Pagination" /> *@
