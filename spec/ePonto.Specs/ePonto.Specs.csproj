@@ -21,8 +21,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\pkg\System.Extensions\System.Extensions.csproj" />
-    <ProjectReference Include="..\ePonto.Specs.Core\ePonto.Specs.Core.csproj" />
-    <ProjectReference Include="..\ePonto.Specs.Shared\ePonto.Specs.Shared.csproj" />
+    <ProjectReference Include="..\..\src\ePonto.Web\ePonto.Web.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="reqnroll.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

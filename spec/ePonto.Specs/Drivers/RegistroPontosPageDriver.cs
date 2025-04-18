@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ePonto.Drivers;
 
-public interface IApuracaoPontosDriver
+public class RegistroPontosPageDriver
 {
+    public void MarcarPonto()
+    {
 
+    }
 }

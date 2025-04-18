@@ -20,7 +20,7 @@ namespace ePonto.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Reqnroll", "1.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class MarcacaoPontosFeature
+    public partial class RegistroPontosFeature
     {
         
         private static Reqnroll.ITestRunner testRunner;
@@ -29,7 +29,7 @@ namespace ePonto.Features
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "MarcacaoPontos.feature"
+#line 1 "RegistroPontos.feature"
 #line hidden
         
         public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext
@@ -48,7 +48,7 @@ namespace ePonto.Features
         public static async System.Threading.Tasks.Task FeatureSetupAsync(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = Reqnroll.TestRunnerManager.GetTestRunnerForAssembly(null, System.Threading.Thread.CurrentThread.ManagedThreadId.ToString());
-            Reqnroll.FeatureInfo featureInfo = new Reqnroll.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "MarcacaoPontos", "A short summary of the feature", ProgrammingLanguage.CSharp, featureTags);
+            Reqnroll.FeatureInfo featureInfo = new Reqnroll.FeatureInfo(new System.Globalization.CultureInfo("pt-br"), "Features", "Registro Pontos", "O sistema deverá fornecer para o trabalhador a capacidade de marcar um ponto", ProgrammingLanguage.CSharp, featureTags);
             await testRunner.OnFeatureStartAsync(featureInfo);
         }
         
@@ -63,9 +63,9 @@ namespace ePonto.Features
         public async System.Threading.Tasks.Task TestInitializeAsync()
         {
             if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "MarcacaoPontos")))
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "Registro Pontos")))
             {
-                await global::ePonto.Features.MarcacaoPontosFeature.FeatureSetupAsync(null);
+                await global::ePonto.Features.RegistroPontosFeature.FeatureSetupAsync(null);
             }
         }
         
@@ -92,16 +92,16 @@ namespace ePonto.Features
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("[scenario name]")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MarcacaoPontos")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("tag1")]
-        public async System.Threading.Tasks.Task ScenarioName()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("[Marcar Ponto] Trabalhador \'Marcelo\' marca um ponto às \'27/11/2022 09:14\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Registro Pontos")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("main")]
+        public async System.Threading.Tasks.Task MarcarPontoTrabalhadorMarceloMarcaUmPontoAs271120220914()
         {
             string[] tagsOfScenario = new string[] {
-                    "tag1"};
+                    "main"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            Reqnroll.ScenarioInfo scenarioInfo = new Reqnroll.ScenarioInfo("[scenario name]", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 6
+            Reqnroll.ScenarioInfo scenarioInfo = new Reqnroll.ScenarioInfo("[Marcar Ponto] Trabalhador \'Marcelo\' marca um ponto às \'27/11/2022 09:14\'", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 10
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -111,14 +111,15 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 7
- await testRunner.GivenAsync("[context]", ((string)(null)), ((Reqnroll.Table)(null)), "Given ");
+#line 11
+ await testRunner.GivenAsync("que o trabalhador \'Marcelo\' está autenticado", ((string)(null)), ((Reqnroll.Table)(null)), "Dado ");
 #line hidden
-#line 8
- await testRunner.WhenAsync("[action]", ((string)(null)), ((Reqnroll.Table)(null)), "When ");
+#line 12
+ await testRunner.WhenAsync("o trabalhador \'Marcelo\' marcar o ponto às \'27/11/2022 09:14\'", ((string)(null)), ((Reqnroll.Table)(null)), "Quando ");
 #line hidden
-#line 9
- await testRunner.ThenAsync("[outcome]", ((string)(null)), ((Reqnroll.Table)(null)), "Then ");
+#line 14
+ await testRunner.ThenAsync("um ponto deverá ser registrado para o trabalhador \'Marcelo\' às \'27/11/2022 09:14\'" +
+                        "", ((string)(null)), ((Reqnroll.Table)(null)), "Então ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

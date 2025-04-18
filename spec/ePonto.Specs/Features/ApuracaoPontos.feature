@@ -1,9 +1,3 @@
-﻿Feature: ApuracaoPontos
+﻿# language: pt-br
 
-A short summary of the feature
-
-@tag1
-Scenario: [scenario name]
-	Given [context]
-	When [action]
-	Then [outcome]
+Funcionalidade: Apuracao Pontos
