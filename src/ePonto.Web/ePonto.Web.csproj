@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ePonto.ApplicationCore\ePonto.ApplicationCore.csproj" />
     <ProjectReference Include="..\ePonto.DomainModel\ePonto.DomainModel.csproj" />
   </ItemGroup>
 
