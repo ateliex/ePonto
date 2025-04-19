@@ -1,66 +1,28 @@
-using ePonto.Data;
-using ePonto.Features.BuscaContratos;
-using ePonto.Features.GestaoContratos;
-using ePonto.Features.RegistroPontos;
-using ePonto.Models.Pontos;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.OpenIdConnect;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.Authorization;
-using Microsoft.Identity.Web;
-using Microsoft.Identity.Web.UI;
+using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.FluentUI.AspNetCore.Components;
 
-namespace ePonto;
-
-public class Program
+namespace ePonto
 {
-    public static void Main(string[] args)
+    public class Program
     {
-        var builder = WebApplication.CreateBuilder(args);
-
-        // Add services to the container.
-        builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
-            .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("AzureAd"));
-
-        builder.Services.AddControllersWithViews(options =>
+        public static async Task Main(string[] args)
         {
-            var policy = new AuthorizationPolicyBuilder()
-                .RequireAuthenticatedUser()
-                .Build();
-            options.Filters.Add(new AuthorizeFilter(policy));
-        });
-        builder.Services.AddRazorPages()
-            .AddMicrosoftIdentityUI();
+            var builder = WebAssemblyHostBuilder.CreateDefault(args);
+            builder.RootComponents.Add<App>("#app");
+            builder.RootComponents.Add<HeadOutlet>("head::after");
 
-        builder.Services.AddTransient<ConsultaPontosInterface, PontosDbService>();
-        builder.Services.AddTransient<DetalhamentoPontosInterface, PontosDbService>();
-        builder.Services.AddTransient<RegistroPontosInterface, RegistroPontosService>();
-        builder.Services.AddTransient<MarcacaoPontosInterface, MarcacaoPontosService>();
-        builder.Services.AddTransient<ConsultaContratosInterface, ContratosDbService>();
-        builder.Services.AddTransient<BuscaContratosInterface, ContratosDbService>();
+            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.AddFluentUIComponents();
 
-        var app = builder.Build();
+            builder.Services.AddOidcAuthentication(options =>
+            {
+                // Configure your authentication provider options here.
+                // For more information, see https://aka.ms/blazor-standalone-auth
+                builder.Configuration.Bind("Local", options.ProviderOptions);
+            });
 
-        // Configure the HTTP request pipeline.
-        if (!app.Environment.IsDevelopment())
-        {
-            app.UseExceptionHandler("/Home/Error");
-            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-            app.UseHsts();
+            await builder.Build().RunAsync();
         }
-
-        app.UseHttpsRedirection();
-        app.UseStaticFiles();
-
-        app.UseRouting();
-
-        app.UseAuthorization();
-
-        app.MapControllerRoute(
-            name: "default",
-            pattern: "{controller=Home}/{action=Index}/{id?}");
-        app.MapRazorPages();
-
-        app.Run();
     }
 }
