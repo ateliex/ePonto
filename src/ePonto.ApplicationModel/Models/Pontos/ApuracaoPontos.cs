@@ -1,28 +1,22 @@
-﻿using ePonto.Models.Pontos;
-using ePonto.Shared;
-using System;
-using System.Collections.Generic;
+﻿using ePonto.Models.Misc;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ePonto.Features.ApuracaoPontos;
+namespace ePonto.Models.Pontos;
 
 public interface ApuracaoPontosInterface
 {
     Task ApurarPontos();
 }
 
-public class ApuracaoMensalViewModel
+public class ApuracaoMensalModel
 {
     public DayOfWeek PrimeiroDiaSemanaMes { get; set; }
 
-    public IList<ApuracaoSemanalViewModel> Semanas { get; set; } = default!;
+    public IList<ApuracaoSemanalModel> Semanas { get; set; } = default!;
 
     public int TotalSemanas { get => Semanas.Count; }
 
-    public IList<ApuracaoDiariaViewModel> Dias { get; set; } = default!;
+    public IList<ApuracaoDiariaModel> Dias { get; set; } = default!;
 
     public int TotalDias { get => Dias.Count; }
 
@@ -34,17 +28,17 @@ public class ApuracaoMensalViewModel
 
     public TempoPeriodo TempoPeriodo { get; set; }
 
-    public ApuracaoMensalViewModel()
+    public ApuracaoMensalModel()
     {
-        Semanas = new List<ApuracaoSemanalViewModel>();
+        Semanas = new List<ApuracaoSemanalModel>();
 
-        Dias = new List<ApuracaoDiariaViewModel>();
+        Dias = new List<ApuracaoDiariaModel>();
 
         TempoPeriodo = new TempoPeriodo();
     }
 }
 
-public class ApuracaoSemanalViewModel
+public class ApuracaoSemanalModel
 {
     public int NumeroSemana { get; set; }
 
@@ -59,13 +53,13 @@ public class ApuracaoSemanalViewModel
 
     public TempoPeriodo TempoPeriodo { get; set; }
 
-    public ApuracaoSemanalViewModel()
+    public ApuracaoSemanalModel()
     {
         TempoPeriodo = new TempoPeriodo();
     }
 }
 
-public class ApuracaoDiariaViewModel
+public class ApuracaoDiariaModel
 {
     public int Dia { get; set; }
 
@@ -99,7 +93,7 @@ public class ApuracaoDiariaViewModel
 
     public Ponto[] Pontos { get; set; }
 
-    public ApuracaoDiariaViewModel()
+    public ApuracaoDiariaModel()
     {
         TempoPeriodo = new TempoPeriodo();
     }

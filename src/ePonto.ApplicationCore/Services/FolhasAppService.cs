@@ -1,21 +1,17 @@
 ﻿using ePonto.Models.Folhas;
-using ePonto.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
 using ePonto.Helpers;
 using ePonto.Models.Pontos;
+using ePonto.Repositories;
 
-namespace ePonto.Features.ApuracaoPontos;
+namespace ePonto.Services;
 
-public class ApuracaoPontosService : ApuracaoPontosInterface
+public class FolhasAppService :
+    ApuracaoPontosInterface
 {
     private readonly PontosRepositoryInterface _pontosRepository;
 
-    public ApuracaoPontosService(PontosRepositoryInterface pontosRepository)
+    public FolhasAppService(PontosRepositoryInterface pontosRepository)
     {
         _pontosRepository = pontosRepository;
     }
@@ -33,9 +29,9 @@ public class ApuracaoPontosService : ApuracaoPontosInterface
         await Task.CompletedTask;
     }
 
-    public async Task<ApuracaoMensalViewModel> ApurarFolha(Folha folha, ClaimsPrincipal user, DateTime hoje, DateTime competenciaAtual, DateTime competenciaFolha, DateTime competenciaFolhaPosterior)
+    public async Task<ApuracaoMensalModel> ApurarFolha(Folha folha, ClaimsPrincipal user, DateTime hoje, DateTime competenciaAtual, DateTime competenciaFolha, DateTime competenciaFolhaPosterior)
     {
-        var apuracaoMensal = new ApuracaoMensalViewModel();
+        var apuracaoMensal = new ApuracaoMensalModel();
 
         var pontos = await _pontosRepository.ObtemPontos();
 
@@ -86,7 +82,7 @@ public class ApuracaoPontosService : ApuracaoPontosInterface
         {
             var numeroSemanaAtual = hoje.GetWeekNumber();
 
-            var apuracaoSemanalModel = new ApuracaoSemanalViewModel
+            var apuracaoSemanalModel = new ApuracaoSemanalModel
             {
                 NumeroSemana = competenciaFolha.GetWeekNumber() + semanaIndex,
                 TempoTotalPrevisto = TimeSpan.Zero,
@@ -207,7 +203,7 @@ public class ApuracaoPontosService : ApuracaoPontosInterface
 
                 var data = competenciaFolha.AddDays(apuracaoDiaria.Dia.Value - 1);
 
-                var apuracaoDiariaModel = new ApuracaoDiariaViewModel
+                var apuracaoDiariaModel = new ApuracaoDiariaModel
                 {
                     Dia = apuracaoDiaria.Dia.Value,
                     DiaSemana = data.DayOfWeek,

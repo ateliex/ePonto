@@ -11,4 +11,8 @@
     <ProjectReference Include="..\..\pkg\System.Extensions\System.Extensions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Shared\" />
+  </ItemGroup>
+
 </Project>

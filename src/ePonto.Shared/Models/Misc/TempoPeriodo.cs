@@ -1,4 +1,4 @@
-﻿namespace ePonto.Shared;
+﻿namespace ePonto.Models.Misc;
 
 public class TempoPeriodo
 {

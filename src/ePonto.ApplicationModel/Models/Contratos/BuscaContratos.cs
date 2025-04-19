@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ePonto.Features.BuscaContratos;
+﻿namespace ePonto.Models.Contratos;
 
 public interface BuscaContratosInterface
 {
@@ -18,10 +12,10 @@ public class BuscaContratosRequest
 
 public class BuscaContratosResponse
 {
-    public Contrato[] Contratos { get; set; }
+    public ContratoModel[] Contratos { get; set; }
 }
 
-public class Contrato
+public class ContratoModel
 {
     public long Id { get; set; }
 

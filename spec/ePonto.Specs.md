@@ -15,4 +15,10 @@ Um trabalhador precisa prestar contas de sua presença ao empregador.
 
 - No máximo 2 (dois) registros de presença por dia.
 
-### Eventos do eSocial
+### Features
+
+- ApuracaoPontos
+- BuscaContratos
+- GestaoContratos
+- GestaoFolhas
+- RegistroPontos

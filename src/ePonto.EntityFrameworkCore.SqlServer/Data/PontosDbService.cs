@@ -1,10 +1,5 @@
-﻿using ePonto.Features.RegistroPontos;
-using ePonto.Models.Pontos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ePonto.Models.Pontos;
+using ePonto.Repositories;
 
 namespace ePonto.Data;
 
@@ -17,7 +12,7 @@ public class PontosDbService : PontosRepositoryInterface,
         var response = new ConsultaPontosResponse();
 
         response.Pontos = [
-            new Features.RegistroPontos.Ponto
+            new PontoModel
             {
                 DataHora= DateTime.Now
             }
@@ -31,7 +26,7 @@ public class PontosDbService : PontosRepositoryInterface,
         throw new NotImplementedException();
     }
 
-    public Task<Models.Pontos.Ponto[]> ObtemPontos()
+    public Task<Ponto[]> ObtemPontos()
     {
         throw new NotImplementedException();
     }

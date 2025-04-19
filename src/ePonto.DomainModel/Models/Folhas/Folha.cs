@@ -1,10 +1,7 @@
-﻿using ePonto.Helpers;
-using ePonto.Models.Contratos;
+﻿using ePonto.Models.Contratos;
 using ePonto.Models.Pontos;
-using ePonto.Shared;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Security.Claims;
 
 namespace ePonto.Models.Folhas;
 

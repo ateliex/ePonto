@@ -1,6 +1,4 @@
-using System;
 using ePonto.Drivers;
-using Reqnroll;
 
 namespace ePonto.StepDefinitions
 {

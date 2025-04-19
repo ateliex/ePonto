@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ePonto.Features.RegistroPontos;
+﻿namespace ePonto.Models.Pontos;
 
 public interface ConsultaPontosInterface
 {
@@ -20,10 +12,10 @@ public class ConsultaPontosRequest
 
 public class ConsultaPontosResponse
 {
-    public Ponto[] Pontos { get; set; }
+    public PontoModel[] Pontos { get; set; }
 }
 
-public class Ponto
+public class PontoModel
 {
     public DateTime DataHora { get; set; }
 
