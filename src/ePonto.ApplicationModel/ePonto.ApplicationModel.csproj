@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\pkg\System.Extensions\System.Extensions.csproj" />
-    <ProjectReference Include="..\ePonto.DomainModel\ePonto.DomainModel.csproj" />
     <ProjectReference Include="..\ePonto.Shared\ePonto.Shared.csproj" />
   </ItemGroup>
 

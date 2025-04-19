@@ -4,11 +4,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ePonto.Models.Pontos;
 
-public interface ApuracaoPontosInterface
-{
-    Task ApurarPontos();
-}
-
 public class ApuracaoMensalModel
 {
     public DayOfWeek PrimeiroDiaSemanaMes { get; set; }
@@ -92,7 +87,7 @@ public class ApuracaoDiariaModel
 
     public DateTime? DataHoraFim { get; set; }
 
-    public PontoDataModel[] Pontos { get; set; }
+    public PontoModel[] Pontos { get; set; }
 
     public ApuracaoDiariaModel()
     {
@@ -100,7 +95,7 @@ public class ApuracaoDiariaModel
     }
 }
 
-public class PontoDataModel
+public class PontoModel
 {
     [Required(ErrorMessage = "'Contrato' deve ser informado.")]
     [DisplayName("Contrato")]

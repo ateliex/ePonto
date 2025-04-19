@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\pkg\System.Extensions\System.Extensions.csproj" />
-    <ProjectReference Include="..\..\src\ePonto.Web\ePonto.Web.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -6,8 +6,7 @@ using ePonto.Repositories;
 
 namespace ePonto.Services;
 
-public class FolhasAppService :
-    ApuracaoPontosInterface
+public class FolhasAppService
 {
     private readonly PontosRepositoryInterface _pontosRepository;
 
@@ -219,7 +218,13 @@ public class FolhasAppService :
                     Observacao = apuracaoDiaria.Observacao,
                     DataHoraInicio = pontosDoDia.FirstOrDefault()?.DataHora,
                     DataHoraFim = pontosDoDia.LastOrDefault()?.DataHora,
-                    Pontos = pontosDoDia.ToArray()
+                    Pontos = pontosDoDia.Select(x => new PontoModel
+                    {
+                        DataHora = x.DataHora,
+                        MomentoId = x.MomentoId,
+                        Observacao = x.Observacao
+                    })
+                    .ToArray()
                 };
 
                 apuracaoDiaria.TempoApurado = apuracaoDiaria.TempoApurado ?? TimeSpan.Zero;

@@ -2,8 +2,7 @@
 
 namespace ePonto.Services;
 
-public class ContratosAppService :
-    AberturaContratosInterface
+public class ContratosAppService
 {
     public ContratosAppService()
     {
